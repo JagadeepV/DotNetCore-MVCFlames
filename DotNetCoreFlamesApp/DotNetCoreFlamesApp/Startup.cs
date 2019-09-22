@@ -46,6 +46,7 @@ namespace DotNetCoreFlamesApp
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
