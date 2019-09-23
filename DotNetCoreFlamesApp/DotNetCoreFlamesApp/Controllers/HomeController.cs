@@ -26,7 +26,7 @@ namespace DotNetCoreFlamesApp.Controllers
             var data ="";
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost/FlamesApi/");
+                client.BaseAddress = new Uri("http://jagadeepapi.azurewebsites.net/");
                 client.DefaultRequestHeaders.Clear();
 
                 HttpResponseMessage res = await client.GetAsync("api/Values?name1=" + flamesViewModel.Flames.Name1 + "&name2=" + flamesViewModel.Flames.Name2);
