@@ -1,0 +1,52 @@
+﻿@model DotNetCoreFlamesApp.Models.FlamesViewModel
+
+@{
+    ViewBag.Title = "Flames";
+}
+
+<form asp-controller="home" asp-action="Flames" method="post">
+    <div class="container">
+        <div class="row m-2">
+            <div class="col-md-1">
+                <label asp-for="Flames.Name1" class="col-form-label"></label>:
+            </div>
+            <div class="col-md-11">
+                <input type="text" asp-for="Flames.Name1" class="form-control" />
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-md-1">
+                <label asp-for="Flames.Name2" class="col-form-label"></label>:
+            </div>
+            <div class="col-md-11">
+                <input type="text" asp-for="Flames.Name2" class="form-control" />
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-11">
+                <input type="submit" class="btn btn-primary w-100" />
+            </div>
+        </div>
+        <div class="row m-2">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-11">
+                <input type="button" value="Clear" onclick="location.href='Clear'" class="btn btn-danger w-100" />
+            </div>
+        </div>
+        @if (Model != null)
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="@Model.ImgSrc" alt="@Model.AltImgSrc" asp-append-version="true" />
+                </div>
+                <div class="col-md-6">
+                    <h1 style="font-family:'French Script MT'; color:yellowgreen">@Model.Result</h1>
+                </div>
+            </div>
+        }
+    </div>
+</form>
+
